@@ -1,0 +1,50 @@
+body {
+    font-family: sans-serif;
+    background-color: #f9f9f9;
+    padding: 2rem;
+}
+
+main {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+}
+
+#div-form {
+    display: flex;
+    gap: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    background: #eee;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.edit-btn {
+    margin-right: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    border-color: white;
+    background-color: blue;
+    color: #f9f9f9;
+}
+
+.delete-btn {
+    background-color: red;
+    border-radius: 5px;
+    padding: 5px;
+    border-color: white;
+    color: #f9f9f9;
+}
