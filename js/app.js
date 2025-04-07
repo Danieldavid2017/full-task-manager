@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log(task);
 
                 const li = document.createElement('li');
-                li.className='flex justify-between items-center bg-gray-100 px-15 py-15 rounded';
+                li.className='flex justify-between items-center bg-gray-100 px-12 py-15 rounded';
             if (task.complete) {
                 li.classList.add('completada');
             }
