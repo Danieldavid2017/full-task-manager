@@ -32,19 +32,33 @@ li {
     border-radius: 5px;
 }
 
+.complete-btn {
+    margin-right: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    border-color: white;
+    background-color: rgb(90, 104, 231);
+    color: #f9f9f9;
+}
+
 .edit-btn {
     margin-right: 5px;
     border-radius: 5px;
     padding: 5px;
     border-color: white;
-    background-color: blue;
+    background-color: rgb(43, 145, 12);
     color: #f9f9f9;
 }
 
 .delete-btn {
-    background-color: red;
+    background-color: rgb(226, 134, 13);
     border-radius: 5px;
     padding: 5px;
     border-color: white;
     color: #f9f9f9;
 }
+
+.completada {
+    background-color: #a8e6a1;
+    text-decoration: "Completada";
+  }

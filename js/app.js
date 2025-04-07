@@ -40,18 +40,37 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log(task);
 
                 const li = document.createElement('li');
-                li.innerHTML =
-                    '<span>' + task.text + '</span>' +
-                    '<div>' +
-                    '<button class="edit-btn" onclick="editTask(' + task.id + ')">' +
-                    'Editar </button>' +
-                    '<button class="delete-btn" onclick="deleteTask(' + task.id + ')">' +
-                    'Eliminar </button>' +
-                    '</div>';
-                taskList.appendChild(li);
+                li.className='flex justify-between items-center bg-gray-100 px-15 py-15 rounded';
+            if (task.complete) {
+                li.classList.add('completada');
             }
+                li.innerHTML =
+                '<span>' + task.text + '</span>' +
+                '<div>' +
+               
+                (task.complete ?
+                    '<button class="complete-btn" disabled>Modificada</button>' :
+                   
+                    
+                    '<button class="complete-btn" onclick="toggleComplete(' + task.id + ')">Marcar Completa</button>'+
+                    '<button class="edit-btn" onclick="editTask(' + task.id + ')">Editar</button>' +
+                    '<button class="delete-btn" onclick="deleteTask(' + task.id + ')">Eliminar</button>' 
+                ) +
+                '</div>';
+        taskList.appendChild(li);
+    
+        const completeBtn = li.querySelector('.complete-btn');
+        completeBtn.addEventListener('click', () => {
+            completeTask(task.id);
+        });
+        });
+    }
 
+    window.completeTask = function (id) {
+        tasks = tasks.map(task =>
+            task.id === id ? { ...task, complete: !task.complete } : task
         );
+        renderTasks();
     }
 
     window.deleteTask = function (id) {
@@ -70,4 +89,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    
 });
