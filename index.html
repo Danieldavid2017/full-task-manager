@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Task Manager</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/styles.css'>
+    <script src='js/app.js'></script>
+</head>
+
+<body>
+    <main>
+        <h1>Gestor de tareas</h1>
+        
+        <!-- Sección de categorías -->
+        <section id="categories-section">
+            <h2>Gestión de categorías</h2>
+            <form id="category-form" class="my-form">
+                <input type="hidden" id="category-id" name="category_id" value="">
+                <label for="category-name" class="field">
+                    <span>
+                        <span class="req-field">*</span>
+                        Nombre de categoría:
+                    </span>
+                    <input type="text" name="name" placeholder="Nombre de categoría" id="category-name" required />
+                </label>
+                <button type="submit" id="category-submit-btn">Agregar categoría</button>
+                <button type="button" id="category-cancel-btn" style="display: none;">Cancelar</button>
+            </form>
+            
+            <h3>Mis categorías</h3>
+            <div id="categories-container">
+                <ul id="category-list"></ul>
+            </div>
+        </section>
+        
+        <!-- Sección de tareas -->
+        <section id="tasks-section">
+            <h2>Gestión de tareas</h2>
+            <form action="server/task/create.php" method="post" class="my-form" id="task-form">
+                <input type="hidden" id="task-id" name="task_id" value="">
+                <label for="title" class="field">
+                    <span>
+                        <span class="req-field">*</span>
+                        Título:
+                    </span>
+                    <input type="text" name="title" placeholder="Título" id="title" required />
+                </label>
+                <label for="description" class="field">
+                    <span>Descripción: </span>
+                    <input type="text" name="description" placeholder="Descripción" id="description" />
+                </label>
+                <label for="due_date" class="field">
+                    <span>Fecha límite:</span>
+                    <input type="date" name="due_date" placeholder="Fecha límite" id="due_date" />
+                </label>
+                <label for="completed" class="field cbx-g">
+                    <span>¿Está completada?</span>
+                    <input type="checkbox" name="completed" id="completed" />
+                </label>
+                <label for="category_id" class="field">
+                    <span>
+                        <span class="req-field">*</span>
+                        Categoría:
+                    </span>
+                    <select name="category_id" id="category_id" required>
+                        <option value="">Seleccione una categoría</option>
+                    </select>
+                </label>
+                <input type="hidden" name="user_id" id="user_id" value="" />
+                <button type="submit" id="task-submit-btn">Agregar tarea</button>
+                <button type="button" id="task-cancel-btn" style="display: none;">Cancelar</button>
+            </form>
+            
+            <h3>Mis tareas</h3>
+            <div id="task-container">
+                <ul id="task-list"></ul>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
